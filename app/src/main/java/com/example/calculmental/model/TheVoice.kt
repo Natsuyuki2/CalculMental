@@ -30,6 +30,7 @@ class TheVoice (private val context : Context) : CalculMental {
         player = MediaPlayer.create(context, idDesSonsALire!![caseALire])
 
         player?.setOnCompletionListener {
+            player?.release()
             caseALire += 1
 
             if (caseALire < idDesSonsALire!!.size) {
@@ -38,13 +39,13 @@ class TheVoice (private val context : Context) : CalculMental {
         }
 
         player?.start()
-
     }
 
 
 
 
     override fun repeteLaQuestion() {
+        caseALire = 0
         lire()
     }
 

@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         nouvelleQuestionBoutton.setOnClickListener {
             theVoice.nouvelleQuestion()
         }
-        val répéteLaQuestion : Button = findViewById(R.id.répéter)
-        répéteLaQuestion.setOnClickListener {
+        val repeteLaQuestion : Button = findViewById(R.id.repeter)
+        repeteLaQuestion.setOnClickListener {
             theVoice.repeteLaQuestion()
         }
     }
