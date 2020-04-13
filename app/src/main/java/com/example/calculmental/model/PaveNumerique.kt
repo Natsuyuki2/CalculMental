@@ -18,7 +18,7 @@ class PaveNumerique : Clavier {
         TODO("Not yet implemented")
     }
 
-    var nombreSaisit : String = ""
-    var resultat : Int = 0
+    private var nombreSaisit : String = ""
+    private var resultat : Int = 0
 
 }
