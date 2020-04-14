@@ -15,6 +15,13 @@ class TheVoice (private val context : Context) : CalculMental {
 
         operation = Random().nextInt(2) + 1
 
+        if (membreDeGauche < membreDeDroite && operation == 2) {
+            inversionSoustraction = membreDeGauche
+            membreDeGauche = membreDeDroite
+            membreDeDroite = inversionSoustraction
+        }
+
+
         idDesSonsALire = listOf(
             listeDesNombres[membreDeGauche - 1],
             listeDesOperation[operation - 1],
@@ -46,6 +53,7 @@ class TheVoice (private val context : Context) : CalculMental {
         lire()
     }
 
+    var inversionSoustraction : Int = 0
     var symbolOperation : String = ""
     var bonResultat = 0
     var questionEcrite : String = ""
