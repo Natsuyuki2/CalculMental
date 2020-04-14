@@ -42,7 +42,10 @@ class MainActivity : AppCompatActivity() {
 //        }
 
 
-        binding.nouvelleQuestionButton.setOnClickListener { theVoice.nouvelleQuestion() }
+        binding.nouvelleQuestionButton.setOnClickListener {
+            theVoice.nouvelleQuestion()
+            binding.questionEcrite.text = theVoice.ecritLaQuestion()
+        }
         binding.repeter.setOnClickListener { theVoice.repeteLaQuestion() }
 
         binding.keypad10Button.setOnClickListener { binding.resultatText.text = paveNumerique.saisirChiffre("0") }
