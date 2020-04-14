@@ -41,21 +41,41 @@ class TheVoice (private val context : Context) : CalculMental {
         player?.start()
     }
 
-
-
-
     override fun repeteLaQuestion() {
         caseALire = 0
         lire()
     }
 
+    var symbolOperation : String = ""
+    var bonResultat = 0
+    var questionEcrite : String = ""
+
     override fun donneMoiLeResultat(): Int {
-        TODO("Not yet implemented")
+
+        if (operation == 1 ) {
+            bonResultat = membreDeGauche + membreDeDroite
+        }
+        else {
+            bonResultat = membreDeGauche - membreDeDroite
+        }
+
+        return bonResultat
     }
 
     override fun ecritLaQuestion(): String {
-        TODO("Not yet implemented")
+
+        if (operation == 1 ) {
+            symbolOperation = "+"
+        }
+        else {
+            symbolOperation = "-"
+        }
+
+        questionEcrite = "${membreDeGauche.toString()} $symbolOperation ${membreDeDroite.toString()} = "
+
+        return questionEcrite
     }
+
     private val listeDesNombres = listOf(
         R.raw.lianah_1,
         R.raw.lianah_2,
