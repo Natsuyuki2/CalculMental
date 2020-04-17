@@ -15,7 +15,8 @@ class PaveNumerique : Clavier {
     }
 
     override fun supprimerChiffre(): String {
-        TODO("Not yet implemented")
+        nombreSaisit = nombreSaisit.substring(0,nombreSaisit.length - 1 )
+        return nombreSaisit
     }
 
     private var nombreSaisit : String = ""

@@ -58,6 +58,9 @@ class MainActivity : AppCompatActivity() {
         binding.keypad7Button.setOnClickListener { binding.resultatText.text = paveNumerique.saisirChiffre("7") }
         binding.keypad8Button.setOnClickListener { binding.resultatText.text = paveNumerique.saisirChiffre("8") }
         binding.keypad9Button.setOnClickListener { binding.resultatText.text = paveNumerique.saisirChiffre("9") }
+        binding.supprimerBouton.setOnClickListener {
+            binding.resultatText.text = paveNumerique.supprimerChiffre()
+        }
 
         //setContentView(R.layout.activity_main)
         setContentView(binding.root)
