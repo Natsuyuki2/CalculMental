@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityMainBinding
 
+    var first = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -39,19 +41,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         theVoice.isPlaying.observe(this, Observer {
+            if (first) {
+                first = false
+                return@Observer
+            }
+
             when(it){
                 true -> desactiveLesBoutons()
                 false -> activeLesBoutons()
             }
         })
+
+        binding.boutonOkEtSupprimerEnable = false
+        binding.boutonRepeterLaQuestion = false
+        binding.allBoutonEnable = false
+        binding.boutonSuivant = true
     }
 
     private fun desactiveLesBoutons() {
         binding.allBoutonEnable = false
+        binding.boutonOkEtSupprimerEnable = false
+        binding.boutonRepeterLaQuestion = false
+        binding.boutonSuivant = false
     }
 
     private fun activeLesBoutons() {
         binding.allBoutonEnable = true
+        binding.boutonOkEtSupprimerEnable = true
+        binding.boutonRepeterLaQuestion = true
+        binding.boutonSuivant = true
     }
 
     val paveNumerique = PaveNumerique()
@@ -100,6 +118,13 @@ class MainActivity : AppCompatActivity() {
         binding.supprimerBouton.setOnClickListener {
             binding.resultatText.text = paveNumerique.supprimerChiffre()
         }
+    }
 
+    private fun activeLesBoutonsOkEtSupprimer() {
+        binding.boutonOkEtSupprimerEnable = true
+    }
+
+    private fun desactiveLesBoutonsOkEtSupprimer() {
+        binding.boutonOkEtSupprimerEnable = false
     }
 }

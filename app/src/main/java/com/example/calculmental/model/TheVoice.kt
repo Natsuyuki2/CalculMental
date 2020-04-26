@@ -8,6 +8,8 @@ import java.util.*
 
 class TheVoice (private val context : Context) : CalculMental {
 
+    var auMoinsUneFois = false
+
     override fun nouvelleQuestion() {
 
         membreDeGauche = Random().nextInt(10) + 1
@@ -31,6 +33,7 @@ class TheVoice (private val context : Context) : CalculMental {
 
         caseALire = 0
         lire()
+        auMoinsUneFois = true
     }
 
     private fun lire() {
@@ -55,8 +58,11 @@ class TheVoice (private val context : Context) : CalculMental {
     }
 
     override fun repeteLaQuestion() {
-        caseALire = 0
-        lire()
+        if (auMoinsUneFois == true) {
+            caseALire = 0
+            lire()
+        }
+
     }
 
     var inversionSoustraction : Int = 0

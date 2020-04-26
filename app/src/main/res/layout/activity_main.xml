@@ -8,6 +8,16 @@
         <variable
             name="allBoutonEnable"
             type="Boolean" />
+
+        <variable
+            name="boutonOkEtSupprimerEnable"
+            type="Boolean" />
+        <variable
+            name="boutonRepeterLaQuestion"
+            type="Boolean" />
+        <variable
+            name="boutonSuivant"
+            type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -140,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:enabled="@{allBoutonEnable}"
+            android:enabled="@{boutonOkEtSupprimerEnable}"
             android:text="OK"
             app:layout_constraintBaseline_toBaselineOf="@+id/keypad10_button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:enabled="@{allBoutonEnable}"
+            android:enabled="@{boutonSuivant}"
             android:text="Suivant"
             app:layout_constraintBaseline_toBaselineOf="@+id/repeter"
             app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:enabled="@{allBoutonEnable}"
+            android:enabled="@{boutonRepeterLaQuestion}"
             android:text="Répète la question"
             app:layout_constraintEnd_toStartOf="@+id/nouvelleQuestion_button"
             app:layout_constraintHorizontal_bias="0.5"
@@ -179,7 +189,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:enabled="@{allBoutonEnable}"
-            android:text="TextView"
+            android:text=""
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +202,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:enabled="@{allBoutonEnable}"
+            android:enabled="@{boutonOkEtSupprimerEnable}"
             android:text="Supprimer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

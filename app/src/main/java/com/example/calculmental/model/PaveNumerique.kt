@@ -9,13 +9,17 @@ class PaveNumerique : Clavier {
     }
 
     override fun valide(): Int {
-        resultat = nombreSaisit.toInt()
+        if (nombreSaisit != "") {
+            resultat = nombreSaisit.toInt()
+        }
         return resultat
 
     }
 
     override fun supprimerChiffre(): String {
-        nombreSaisit = nombreSaisit.substring(0,nombreSaisit.length - 1 )
+        if (nombreSaisit != "") {
+            nombreSaisit = nombreSaisit.substring(0, nombreSaisit.length - 1)
+        }
         return nombreSaisit
     }
 
