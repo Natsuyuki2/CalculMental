@@ -2,6 +2,7 @@ package com.example.calculmental.model
 
 import android.content.Context
 import android.media.MediaPlayer
+import androidx.lifecycle.MutableLiveData
 import com.example.calculmental.R
 import java.util.*
 
@@ -43,9 +44,14 @@ class TheVoice (private val context : Context) : CalculMental {
             if (caseALire < idDesSonsALire!!.size) {
                 lire()
             }
+            else {
+                isPlaying.value = false
+            }
         }
 
         player?.start()
+        isPlaying.value = true
+
     }
 
     override fun repeteLaQuestion() {
@@ -108,4 +114,11 @@ class TheVoice (private val context : Context) : CalculMental {
     private var idDesSonsALire : List<Int>? = null
 
     private var caseALire : Int = 0
+
+    var isPlaying = MutableLiveData<Boolean>()
+
+    init {
+        isPlaying.value = false
+    }
+
 }
